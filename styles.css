@@ -71,7 +71,8 @@ nav.scrolled { padding: 12px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
 
 /* hero shared */
 .page-hero { padding: 140px 0 80px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; text-align: center; }
-.page-hero h1 { color: white; font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 16px; }
+.page-hero h1, .blog-hero h1 { color: white; margin-bottom: 16px; }
+.page-hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
 .page-hero p { font-size: 1.15rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
 .breadcrumb { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; margin-bottom: 16px; }
 
