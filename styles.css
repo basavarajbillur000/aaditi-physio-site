@@ -97,6 +97,9 @@ footer { background: #0a4f52; color: rgba(255,255,255,0.8); padding: 80px 0 40px
 .footer-links a:hover { color: white; padding-left: 5px; }
 .footer-contact p { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
 
+.footer-seo { text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 24px; }
+.footer-seo strong { color: rgba(255,255,255,0.9); }
+
 /* floating whatsapp */
 .floating-wa { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 999; transition: var(--transition); }
 .floating-wa:hover { transform: scale(1.1); }
