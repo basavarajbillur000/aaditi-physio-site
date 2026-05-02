@@ -1,805 +1,229 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aaditi Physiotherapy | Physiotherapy & Rehabilitation</title>
-  
+  <title>Aaditi Physiotherapy | JP Nagar's Most Trusted Center</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" href="data:,">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   
   <style>
-    :root {
-      /* Refined Clinical Luxury Theme - PRESERVED */
-      --primary: #0F4C3A;
-      --primary-light: #1A6B5A;
-      --accent: #D9C3A0;
-      --accent-dark: #C4AE87;
-      
-      --text-main: #1C1C1C;
-      --text-muted: #595959;
-      --text-light: #999999;
-      
-      --bg-main: #FAF9F6;
-      --bg-white: #FFFFFF;
-      --bg-subtle: #F2EFEB;
-      
-      --font-display: 'Outfit', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
-      
-      --transition-fast: all 0.2s ease;
-      --transition-slow: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      --shadow-soft: 0 20px 45px rgba(15, 76, 58, 0.08);
-      
-      --radius-sm: 8px;
-      --radius-md: 16px;
-      --radius-lg: 32px;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* index specific styles */
+    .hero { min-height: 100vh; display: flex; align-items: center; position: relative; padding: 120px 0 60px; color: white; background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80') center/cover no-repeat; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.55); }
+    .hero .container { position: relative; z-index: 2; max-width: 800px; margin: 0; }
+    .hero-badge { display: inline-block; background: rgba(244, 132, 95, 0.2); border: 1px solid var(--accent); color: white; padding: 6px 16px; border-radius: 100px; font-weight: 500; font-size: 0.9rem; margin-bottom: 24px; backdrop-filter: blur(4px); }
+    .hero-title { font-size: clamp(3rem, 7vw, 4.5rem); color: white; margin-bottom: 20px; line-height: 1.1; }
+    .hero-sub { font-size: 1.25rem; opacity: 0.9; margin-bottom: 40px; max-width: 600px; }
+    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+    .hero-stats { font-size: 0.9rem; opacity: 0.8; letter-spacing: 0.5px; font-weight: 500; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 24px; display: inline-block; }
     
-    body {
-      font-family: var(--font-body);
-      color: var(--text-main);
-      background-color: var(--bg-main);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); color: var(--primary); line-height: 1.1; font-weight: 400; }
-    a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
-    img { max-width: 100%; display: block; }
+    .trust-strip { display: flex; flex-wrap: wrap; gap: 24px; background: white; padding: 32px 48px; border-radius: 12px; box-shadow: var(--shadow-soft); margin-top: -60px; position: relative; z-index: 10; justify-content: space-between; }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--primary); }
+    .trust-item svg { color: var(--accent); width: 20px; height: 20px; }
     
-    .container { width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 5%; }
-
-    .text-overline {
-      font-family: var(--font-display);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--accent-dark);
-      display: block;
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      margin-bottom: 1.5rem;
-      font-weight: 300;
-      letter-spacing: -0.02em;
-    }
-
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      min-height: 48px; padding: 1rem 2rem; border-radius: 100px; font-family: var(--font-display);
-      font-weight: 500; font-size: 0.95rem; letter-spacing: 0.05em;
-      transition: var(--transition-slow); cursor: pointer; text-transform: uppercase;
-      border: 1px solid transparent; gap: 8px;
-    }
-
-    .btn-primary { background-color: var(--primary); color: var(--bg-white); }
-    .btn-primary:hover { background-color: var(--primary-light); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(15, 76, 58, 0.15); }
-    .btn-accent { background-color: var(--accent); color: var(--primary); }
-    .btn-accent:hover { background-color: var(--primary); color: var(--bg-white); }
-    .btn-whatsapp { background-color: #25D366; color: white; }
-    .btn-whatsapp:hover { background-color: #128C7E; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
-    .btn-outline { border-color: rgba(255,255,255,0.2); color: white; }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-
-    .icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
-    .icon { width: 1.15em; height: 1.15em; display: inline-block; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; }
-    .icon-fill { fill: currentColor; stroke: none; }
-
-    /* Navbar */
-    nav {
-      position: fixed; top: 0; width: 100%; background: rgba(250, 249, 246, 0.85);
-      backdrop-filter: blur(20px); z-index: 1000; padding: 1.5rem 0;
-      transition: var(--transition-slow); border-bottom: 1px solid rgba(0,0,0,0.03);
-    }
-    nav.scrolled { padding: 1rem 0; background: rgba(250, 249, 246, 0.98); box-shadow: 0 4px 30px rgba(0,0,0,0.03); }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-family: var(--font-display); font-size: 1.8rem; font-weight: 300; color: var(--primary); letter-spacing: -0.02em; }
-    .logo span { font-weight: 600; color: var(--accent-dark); }
-    .nav-links { display: flex; gap: clamp(1.25rem, 3vw, 3rem); align-items: center; }
-    .nav-links a { font-family: var(--font-display); font-size: 0.95rem; font-weight: 400; color: var(--text-main); }
-    .nav-links a:hover { color: var(--primary-light); }
+    .why-us { background: #0b5f63; color: white; }
+    .why-us .section-title { color: white; }
+    .why-us .card { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: white; }
+    .why-us .card h3 { color: white; font-size: 1.25rem; margin-bottom: 12px; }
+    .why-us .card p { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
     
-    section { scroll-margin-top: 92px; }
-    .section-pad { padding: clamp(4.5rem, 9vw, 8rem) 0; }
-    .grid-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(3rem, 7vw, 6rem); align-items: center; }
-
-    /* Hero */
-    #hero {
-      position: relative; min-height: 100svh; display: flex; align-items: center;
-      padding-top: 5rem; background-color: var(--primary); overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: url('assets/optimized/hero-clinic.jpg') center/cover no-repeat; opacity: 0.35; mix-blend-mode: luminosity;
-    }
-    .hero-bg::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(90deg, rgba(15,76,58,0.92), rgba(15,76,58,0.65) 48%, rgba(15,76,58,0.35));
-    }
-    .hero-container { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr); gap: 4rem; align-items: center; }
-    .hero-title { font-size: clamp(3rem, 6vw, 6rem); color: var(--bg-white); margin-bottom: 1.5rem; line-height: 1; font-weight: 300; text-wrap: balance; }
-    .hero-subtitle { font-size: 1.2rem; color: rgba(255,255,255,0.85); margin-bottom: 3rem; max-width: 90%; font-weight: 300; }
-    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .testimonial-card { background: white; padding: 40px; border-radius: 12px; border: 1px solid #eee; }
+    .stars { color: #F59E0B; margin-bottom: 16px; font-size: 1.2rem; }
+    .testimonial-text { font-size: 1.1rem; font-style: italic; margin-bottom: 24px; color: var(--text-main); }
+    .testimonial-author { font-weight: 700; color: var(--primary); font-family: var(--font-display); }
     
-    .trust-row { display: flex; gap: clamp(1.2rem, 4vw, 3rem); margin-top: clamp(3rem, 8vw, 5rem); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.15); flex-wrap: wrap; }
-    .trust-item h4 { color: var(--accent); font-size: 2.2rem; margin-bottom: 0.2rem; font-weight: 300; }
-    .trust-item p { color: rgba(255,255,255,0.7); font-family: var(--font-display); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
-
-    /* Conditions Grid */
-    #conditions { background: var(--bg-subtle); }
-    .conditions-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin-top: clamp(2.5rem, 5vw, 4rem); }
-    .condition-card {
-      background: var(--bg-white); padding: 1.5rem; border-radius: var(--radius-md);
-      transition: var(--transition-slow); border: 1px solid rgba(15, 76, 58, 0.06);
-    }
-    .condition-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-    .condition-card:hover .cond-icon img { transform: scale(1.05); }
-    .cond-icon { margin-bottom: 1.5rem; display: block; overflow: hidden; border-radius: var(--radius-sm); aspect-ratio: 4 / 3; background: var(--bg-subtle); }
-    .cond-icon img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition-slow); }
-    .condition-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 500; }
-    .condition-card p { font-size: 0.95rem; color: var(--text-muted); }
-
-    /* Services Split */
-    .services-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 4rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
-    .service-track { background: var(--bg-white); padding: clamp(2rem, 4vw, 3rem); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); }
-    .track-title { font-size: 1.8rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--bg-subtle); }
-    .track-item { display: flex; gap: 1.25rem; margin-bottom: 2rem; align-items: flex-start; }
-    .track-icon, .why-icon {
-      width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center;
-      border-radius: 50%; background: rgba(15, 76, 58, 0.08); color: var(--primary); flex: 0 0 48px;
-    }
-    .track-num { font-family: var(--font-display); font-size: 2rem; font-weight: 300; color: var(--accent); }
-    .track-content h4 { font-size: 1.2rem; margin-bottom: 0.3rem; }
-    .track-content p { color: var(--text-muted); font-size: 0.95rem; }
-
-    /* About */
-    .image-block { position: relative; }
-    .image-block img { width: 100%; height: clamp(420px, 62vw, 750px); object-fit: cover; border-radius: var(--radius-lg); box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
-    .image-accent {
-      position: absolute; right: clamp(1rem, 4vw, 2rem); bottom: clamp(1rem, 4vw, 2rem);
-      background: rgba(255,255,255,0.92); backdrop-filter: blur(18px); padding: 1.2rem 1.4rem;
-      border-radius: var(--radius-md); box-shadow: var(--shadow-soft); border: 1px solid rgba(15,76,58,0.08);
-    }
-    .image-accent h4 { color: var(--primary); font-size: 1.1rem; margin-bottom: 0.25rem; }
-    .image-accent p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
-    .about-text h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-    .about-text h4 { font-family: var(--font-body); font-weight: 500; font-size: 1.1rem; color: var(--accent-dark); margin-bottom: 2rem; }
-    .about-text p { font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-muted); }
-    .qual-list { list-style: none; margin-top: 2rem; border-left: 2px solid var(--accent); padding-left: 1.5rem; }
-    .qual-list li { margin-bottom: 0.8rem; color: var(--text-main); font-weight: 500; }
-
-    /* What to Expect Timeline */
-    #expect { background: var(--primary); color: white; }
-    #expect h2 { color: white; }
-    .timeline { display: flex; gap: 2rem; margin-top: 5rem; position: relative; }
-    .timeline::before { content: ''; position: absolute; top: 25px; left: 0; width: 100%; height: 1px; background: rgba(255,255,255,0.2); z-index: 1; }
-    .step { flex: 1; position: relative; z-index: 2; padding-right: 1rem; }
-    .step-num { 
-      background: var(--primary); color: var(--accent); font-family: var(--font-display);
-      font-size: 2.5rem; font-weight: 300; display: inline-block; padding-right: 1rem; margin-bottom: 1.5rem;
-    }
-    .step h4 { color: white; font-size: 1.3rem; margin-bottom: 0.8rem; }
-    .step p { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
-
-    /* Why Choose Us */
-    .why-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2rem, 4vw, 3rem); margin-top: 4rem; }
-    .why-card { display: flex; gap: 1.25rem; }
-    .why-content h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .why-content p { color: var(--text-muted); font-size: 0.95rem; }
-
-    /* Stories */
-    #stories { background: var(--bg-subtle); }
-    .stories-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 4rem; }
-    .story-card { background: var(--bg-white); padding: clamp(2rem, 4vw, 3rem); border-radius: var(--radius-lg); position: relative; box-shadow: var(--shadow-soft); }
-    .story-tag { display: inline-block; padding: 0.4rem 1rem; background: rgba(15, 76, 58, 0.1); color: var(--primary); border-radius: 100px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1.5rem; }
-    .story-quote { font-size: 1.15rem; font-style: italic; color: var(--text-main); margin-bottom: 2rem; }
-    .story-meta { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid var(--bg-subtle); padding-top: 1.5rem; }
-    .story-outcome { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; color: #25D366; font-size: 0.9rem; }
-    .story-sessions { color: var(--text-muted); font-size: 0.85rem; font-family: var(--font-display); }
-
-    /* Reviews */
-    .reviews-header { display: flex; align-items: center; gap: 2rem; margin-bottom: 4rem; background: var(--bg-white); padding: 2rem; border-radius: var(--radius-md); box-shadow: 0 5px 20px rgba(0,0,0,0.02); display: inline-flex; }
-    .review-score { font-size: 3rem; font-family: var(--font-display); font-weight: 300; color: var(--primary); }
-    .review-meta h4 { font-size: 1.2rem; color: var(--text-main); }
-    .review-meta p { color: var(--text-muted); }
-    .reviews-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
-    .review-card { background: var(--bg-white); padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--bg-subtle); }
-    .stars { color: var(--accent-dark); display: flex; gap: 0.18rem; margin-bottom: 1.5rem; }
-    .stars .icon { width: 1rem; height: 1rem; }
-
-    /* Contact */
-    .contact-wrapper { background: var(--bg-white); border-radius: var(--radius-lg); overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; box-shadow: 0 20px 40px rgba(0,0,0,0.04); }
-    .contact-form-area { padding: clamp(2rem, 5vw, 5rem); }
-    .form-group { margin-bottom: 1.5rem; }
-    .form-group label { display: block; font-family: var(--font-display); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--text-muted); }
-    .form-control { width: 100%; background: #F9F9F9; border: 1px solid transparent; border-radius: var(--radius-sm); padding: 1rem; font-family: var(--font-body); font-size: 1rem; }
-    .form-control:focus { outline: none; border-color: var(--primary); background: var(--bg-white); }
-    .contact-map-area { background: #eee; position: relative; min-height: 480px; }
-    
-    footer { background: #0A3628; color: rgba(255,255,255,0.7); padding: 4rem 0 2rem; }
-    .footer-content { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 3rem; margin-bottom: 2rem; }
-
-    .section-reveal {
-      opacity: 0; transform: translateY(32px);
-      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .section-reveal.is-visible { opacity: 1; transform: translateY(0); }
-    .condition-card, .service-track, .step, .why-card, .story-card, .review-card {
-      transition-delay: calc(var(--reveal-index, 0) * 70ms);
-    }
-
-    @media (max-width: 1024px) {
-      .hero-container, .grid-2, .services-layout, .contact-wrapper { grid-template-columns: 1fr; }
-      .conditions-grid { grid-template-columns: repeat(2, 1fr); }
-      .why-grid, .stories-grid, .reviews-grid { grid-template-columns: 1fr 1fr; }
-      .timeline { flex-direction: column; gap: 3rem; }
-      .timeline::before { display: none; }
-    }
-    @media (max-width: 768px) {
-      .container { padding: 0 1.25rem; }
-      nav { padding: 1rem 0; }
-      .logo { font-size: clamp(1.25rem, 6vw, 1.55rem); }
-      .nav-links { display: none; }
-      #hero { min-height: auto; padding: 8rem 0 4rem; }
-      .hero-bg { opacity: 0.28; }
-      .hero-bg::after { background: linear-gradient(180deg, rgba(15,76,58,0.9), rgba(15,76,58,0.78)); }
-      .hero-title { font-size: clamp(2.75rem, 13vw, 4.2rem); }
-      .hero-subtitle { max-width: 100%; font-size: 1.05rem; margin-bottom: 2rem; }
-      .hero-cta, .hero-cta .btn { width: 100%; }
-      .trust-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
-      .trust-item h4 { font-size: 1.8rem; }
-      .conditions-grid, .why-grid, .stories-grid, .reviews-grid { grid-template-columns: 1fr; }
-      .condition-card { padding: 1rem; }
-      .track-item, .why-card { gap: 1rem; }
-      .story-meta { gap: 1rem; align-items: flex-start; flex-direction: column; }
-      .reviews-header { width: 100%; }
-      .contact-map-area { min-height: 360px; }
-      .footer-content { flex-direction: column; gap: 2rem; }
-    }
-
-    @media (max-width: 480px) {
-      .section-title { font-size: clamp(2.2rem, 11vw, 3rem); }
-      .btn { width: 100%; padding-inline: 1.25rem; font-size: 0.85rem; }
-      .trust-row { grid-template-columns: 1fr; }
-      .image-accent { position: static; margin: 1rem 0 0; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
-      .section-reveal { opacity: 1; transform: none; }
-    }
+    .cta-banner { background: linear-gradient(135deg, #0a4f52, #0d7377); color: white; text-align: center; border-radius: var(--radius-lg); padding: 80px 40px; margin-bottom: -100px; position: relative; z-index: 2; box-shadow: var(--shadow-soft); }
+    .cta-banner h2 { color: white; font-size: 2.5rem; margin-bottom: 16px; }
+    .cta-banner p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 32px; }
   </style>
 </head>
 <body>
-  <svg class="icon-sprite" aria-hidden="true" focusable="false">
-    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
-      <path d="M5.2 19.2 6.3 16A7.6 7.6 0 1 1 9 18.3l-3.8.9Z"/>
-      <path d="M9.2 8.7c.3 2.6 2.3 4.7 4.9 5.3l1.2-1.2 1.9.9c.1 1-.5 1.8-1.5 2-3.9.1-7.7-3.4-8.2-7.3.2-.9 1-1.5 1.9-1.3l.8 1.6-1 1Z"/>
-    </symbol>
-    <symbol id="icon-needle" viewBox="0 0 24 24">
-      <path d="M14 4 4 14"/>
-      <path d="m15.5 2.5 6 6"/>
-      <path d="m12.5 5.5 6 6"/>
-      <path d="M4 14 2 22l8-2"/>
-    </symbol>
-    <symbol id="icon-hand" viewBox="0 0 24 24">
-      <path d="M7 12V6.8a1.4 1.4 0 0 1 2.8 0V12"/>
-      <path d="M10 12V5.5a1.4 1.4 0 0 1 2.8 0V12"/>
-      <path d="M13 12V7a1.4 1.4 0 0 1 2.8 0v6"/>
-      <path d="M16 13.5v-3a1.4 1.4 0 0 1 2.8 0v4.2A6.3 6.3 0 0 1 12.5 21H11a6 6 0 0 1-5.6-3.8L4 13.8a1.5 1.5 0 0 1 2.6-1.4L8 15"/>
-    </symbol>
-    <symbol id="icon-pressure" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="2.5"/>
-      <path d="M12 3v4M12 17v4M3 12h4M17 12h4"/>
-      <path d="m5.6 5.6 2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/>
-    </symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24">
-      <path d="M20.5 4.5C12 4 6 8.5 5.2 15.4c-.3 2.8 1.7 4.9 4.5 4.6 6.9-.8 10.5-7.2 10.8-15.5Z"/>
-      <path d="M5.5 19.5C9 15 12.4 11.8 18 8"/>
-    </symbol>
-    <symbol id="icon-target" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="8"/>
-      <circle cx="12" cy="12" r="4"/>
-      <circle cx="12" cy="12" r="1"/>
-    </symbol>
-    <symbol id="icon-clock" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="8"/>
-      <path d="M12 7v5l3.2 2"/>
-    </symbol>
-    <symbol id="icon-phone" viewBox="0 0 24 24">
-      <rect x="8" y="3" width="8" height="18" rx="2"/>
-      <path d="M11 17h2"/>
-    </symbol>
-    <symbol id="icon-home" viewBox="0 0 24 24">
-      <path d="M3 11.5 12 4l9 7.5"/>
-      <path d="M5.5 10.5V20h13v-9.5"/>
-      <path d="M10 20v-5h4v5"/>
-    </symbol>
-    <symbol id="icon-user" viewBox="0 0 24 24">
-      <circle cx="12" cy="8" r="3.2"/>
-      <path d="M5.5 20a6.5 6.5 0 0 1 13 0"/>
-    </symbol>
-    <symbol id="icon-video" viewBox="0 0 24 24">
-      <rect x="3" y="6" width="13" height="12" rx="2"/>
-      <path d="m16 10 5-3v10l-5-3"/>
-    </symbol>
-    <symbol id="icon-pin" viewBox="0 0 24 24">
-      <path d="M12 21s6-5.3 6-11a6 6 0 0 0-12 0c0 5.7 6 11 6 11Z"/>
-      <circle cx="12" cy="10" r="2"/>
-    </symbol>
-    <symbol id="icon-check" viewBox="0 0 24 24">
-      <path d="m5 12 4.2 4.2L19 6.5"/>
-    </symbol>
-    <symbol id="icon-star" viewBox="0 0 24 24">
-      <path class="icon-fill" d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/>
-    </symbol>
-  </svg>
 
-  <!-- 1. Nav -->
+  <!-- Shared Navbar -->
   <nav id="navbar">
     <div class="container nav-container">
-      <a href="#" class="logo">Aaditi <span>Physiotherapy</span></a>
-      <div class="nav-links">
-        <a href="#about">Dr. Jha</a>
-        <a href="#conditions">Conditions</a>
-        <a href="#services">Techniques</a>
-        <a href="#expect">First Visit</a>
-        <a href="#contact" class="btn btn-whatsapp" style="padding: 0.6rem 1.5rem;">WhatsApp Us</a>
+      <a href="index.html" class="logo">Aaditi Physio</a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Book Now</a>
       </div>
+      <button class="hamburger" id="hamburger">
+        <svg class="icon"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
     </div>
   </nav>
 
-  <!-- 2. Hero -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-container">
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container fade-up">
+      <span class="hero-badge">● New patient appointments available</span>
+      <h1 class="hero-title">JP Nagar's Most Trusted Physiotherapy & Rehabilitation Center</h1>
+      <p class="hero-sub">Expert care for pain, injury, and recovery. Rated 5.0 on Google with 182 verified reviews.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/919845233815" class="btn btn-whatsapp" target="_blank">Book on WhatsApp</a>
+        <a href="tel:+919845233815" class="btn btn-outline">Call Now</a>
+      </div>
+      <div class="hero-stats">5.0★ Google Rating &bull; 182 Reviews &bull; 10+ Years Experience &bull; Home Visits Available</div>
+    </div>
+  </header>
+
+  <!-- Trust Strip -->
+  <div class="container">
+    <div class="trust-strip fade-up">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Certified Physiotherapists</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Evidence-Based Treatment</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Home Visits Available</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Same-Day Appointments</div>
+    </div>
+  </div>
+
+  <!-- Services Preview -->
+  <section class="container">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;" class="fade-up">
       <div>
-        <span class="text-overline" style="color: var(--accent);">JP Nagar, Bengaluru</span>
-        <h1 class="hero-title">Reclaim Your Movement,<br>Without Surgery.</h1>
-        <p class="hero-subtitle">Expert physiotherapy for sports injuries, chronic pain, and post-surgical rehab. Evidence-based. Patient-first.</p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary">Book Free Assessment</a>
-          <a href="https://wa.me/919845233815" class="btn btn-whatsapp"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg> WhatsApp Us Now</a>
-        </div>
-        
-        <div class="trust-row">
-          <div class="trust-item"><h4>182+</h4><p>Reviews</p></div>
-          <div class="trust-item"><h4>5.0</h4><p>Google Rating</p></div>
-          <div class="trust-item"><h4>15+</h4><p>Years Exp</p></div>
-          <div class="trust-item"><h4>5,000+</h4><p>Patients</p></div>
-        </div>
+        <span class="text-overline">Expert Care</span>
+        <h2 class="section-title" style="margin-bottom: 0;">Specialized Treatments</h2>
+      </div>
+      <a href="services.html" class="btn btn-outline" style="color: var(--primary); border-color: var(--primary);">View All Services</a>
+    </div>
+    <div class="grid-3">
+      <div class="card fade-up">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80" alt="Back and Spine Pain">
+        <h3>Back & Spine Pain</h3>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">Targeting the root cause to correct movement patterns and restore pain-free life.</p>
+        <a href="services.html" style="color: var(--accent); font-weight: 600;">Learn more &rarr;</a>
+      </div>
+      <div class="card fade-up" style="transition-delay: 0.1s;">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="Sports Injury Rehab">
+        <h3>Sports Injury Rehab</h3>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">Targeted rehab to reduce pain, rebuild strength, and get you back to your game safely.</p>
+        <a href="services.html" style="color: var(--accent); font-weight: 600;">Learn more &rarr;</a>
+      </div>
+      <div class="card fade-up" style="transition-delay: 0.2s;">
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80" alt="Neurological Rehab">
+        <h3>Neurological Rehabilitation</h3>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">Improving control, confidence, and daily function after stroke or paralysis.</p>
+        <a href="services.html" style="color: var(--accent); font-weight: 600;">Learn more &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- 3. Conditions We Treat (NEW) -->
-  <section id="conditions" class="section-pad">
+  <!-- Why Choose Us -->
+  <section class="why-us">
     <div class="container">
-      <span class="text-overline">Patient Self-Identification</span>
-      <h2 class="section-title">Conditions We Treat</h2>
-      <p style="font-size: 1.1rem; color: var(--text-muted);">Whether it's a recent injury or a chronic condition, we have a structured recovery plan for you.</p>
-      
-      <div class="conditions-grid">
-        <div class="condition-card">
-          <span class="cond-icon"><img loading="lazy" decoding="async" src="assets/new_conditions/paralysis-neurological.jpeg" alt="Paralysis / Neurological"></span>
-          <h3>Paralysis / Neurological</h3>
-          <p>Regain movement and balance for stroke, polio, and CP deformities.</p>
+      <span class="text-overline" style="color: rgba(255,255,255,0.7);">The Aaditi Difference</span>
+      <h2 class="section-title fade-up">Why 182 Patients Gave Us 5 Stars</h2>
+      <div class="grid-4" style="margin-top: 40px;">
+        <div class="card fade-up">
+          <h3>Root-Cause Diagnosis</h3>
+          <p>We don't just treat the symptoms; we identify and correct the underlying biomechanical issues.</p>
         </div>
-        <div class="condition-card">
-          <span class="cond-icon"><img loading="lazy" decoding="async" src="assets/new_conditions/spine-neck.jpeg" alt="Spine & Neck Pain"></span>
-          <h3>Spine & Neck Pain</h3>
-          <p>Cervical spondylosis, lumbar disc herniation, and chronic back pain.</p>
+        <div class="card fade-up" style="transition-delay: 0.1s;">
+          <h3>Personalized Plans</h3>
+          <p>Every recovery timeline and treatment plan is tailored specifically to your body and goals.</p>
         </div>
-        <div class="condition-card">
-          <span class="cond-icon"><img loading="lazy" decoding="async" src="assets/new_conditions/joint-pain.jpeg" alt="Joint Pain"></span>
-          <h3>Joint Pain</h3>
-          <p>Knee pain, shoulder pain, arthritis management and mobilization.</p>
+        <div class="card fade-up" style="transition-delay: 0.2s;">
+          <h3>Advanced Techniques</h3>
+          <p>Combining manual therapy, dry needling, and modern equipment for faster results.</p>
         </div>
-        <div class="condition-card">
-          <span class="cond-icon"><img loading="lazy" decoding="async" src="assets/new_conditions/post-surgical-rehab.jpeg" alt="Post-Surgical Rehab"></span>
-          <h3>Post-Surgical Rehab</h3>
-          <p>Recovery after joint replacements, fractures, and spinal surgeries.</p>
-        </div>
-        <div class="condition-card">
-          <span class="cond-icon"><img loading="lazy" decoding="async" src="assets/new_conditions/sports-injuries.jpeg" alt="Sports Injuries"></span>
-          <h3>Sports Injuries</h3>
-          <p>Muscle strains, ligament tears, and return-to-sport programs.</p>
-        </div>
-        <div class="condition-card">
-          <span class="cond-icon"><img loading="lazy" decoding="async" src="assets/new_conditions/geriatric-physiotherapy.jpeg" alt="Geriatric Physiotherapy"></span>
-          <h3>Geriatric Physiotherapy</h3>
-          <p>Balance, fall prevention, and mobility programs for seniors.</p>
-        </div>
-        <div class="condition-card">
-          <span class="cond-icon"><img loading="lazy" decoding="async" src="assets/new_conditions/pediatric-physiotherapy.jpeg" alt="Pediatric Physiotherapy"></span>
-          <h3>Pediatric Physiotherapy</h3>
-          <p>Developmental delays and specialized pediatric orthopedic conditions.</p>
-        </div>
-        <div class="condition-card">
-          <span class="cond-icon"><img loading="lazy" decoding="async" src="assets/new_conditions/postural-deformities.jpeg" alt="Postural Deformities"></span>
-          <h3>Postural Deformities</h3>
-          <p>Ergonomic corrections, desk pain, and workplace injury programs.</p>
+        <div class="card fade-up" style="transition-delay: 0.3s;">
+          <h3>Home Visits</h3>
+          <p>Can't make it to the clinic? We bring premium physiotherapy care directly to your doorstep.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. Services / Techniques (TWO-TRACK) -->
-  <section id="services" class="section-pad">
-    <div class="container">
-      <span class="text-overline">Clinical Expertise</span>
-      <h2 class="section-title">Our Treatment Techniques</h2>
-      <p style="font-size: 1.1rem; color: var(--text-muted);">Combining hands-on therapy with advanced clinical modalities for faster, lasting recovery.</p>
-      
-      <div class="services-layout">
-        <div class="service-track">
-          <h3 class="track-title">Manual & Hands-On Therapy</h3>
-          <div class="track-item">
-            <span class="track-icon"><svg class="icon" aria-hidden="true"><use href="#icon-needle"></use></svg></span>
-            <div class="track-content">
-              <h4>Clinical Acupuncture</h4>
-              <p>M.D. level traditional acupuncture for profound pain relief and systemic healing.</p>
-            </div>
-          </div>
-          <div class="track-item">
-            <span class="track-icon"><svg class="icon" aria-hidden="true"><use href="#icon-hand"></use></svg></span>
-            <div class="track-content">
-              <h4>Manual Therapy</h4>
-              <p>Joint mobilization and soft tissue manipulation for immediate pain relief.</p>
-            </div>
-          </div>
-          <div class="track-item">
-            <span class="track-icon"><svg class="icon" aria-hidden="true"><use href="#icon-pressure"></use></svg></span>
-            <div class="track-content">
-              <h4>Acupressure</h4>
-              <p>Targeted pressure point therapy to release deep muscle tension.</p>
-            </div>
-          </div>
-          <div class="track-item">
-            <span class="track-icon"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"></use></svg></span>
-            <div class="track-content">
-              <h4>Natural Therapy</h4>
-              <p>Holistic therapeutic methods to cure deformities with zero side effects.</p>
-            </div>
-          </div>
-        </div>
-        <div class="service-track">
-          <h3 class="track-title">Equipment-Assisted Therapy</h3>
-          <div class="track-item">
-            <span class="track-num">01</span>
-            <div class="track-content">
-              <h4>Laser Therapy</h4>
-              <p>Low-level laser reduces swelling and pain in joints and soft tissue.</p>
-            </div>
-          </div>
-          <div class="track-item">
-            <span class="track-num">02</span>
-            <div class="track-content">
-              <h4>TENS / IFT</h4>
-              <p>Electrical Nerve Stimulation for acute and chronic pain relief.</p>
-            </div>
-          </div>
-          <div class="track-item">
-            <span class="track-num">03</span>
-            <div class="track-content">
-              <h4>Ultrasound Therapy</h4>
-              <p>Sound waves accelerate tissue repair and reduce inflammation.</p>
-            </div>
-          </div>
-          <div class="track-item">
-            <span class="track-num">04</span>
-            <div class="track-content">
-              <h4>Traction Therapy</h4>
-              <p>Mechanical cervical and lumbar traction for disc-related nerve pain.</p>
-            </div>
-          </div>
-        </div>
+  <!-- Testimonials -->
+  <section class="container" style="padding-top: 100px;">
+    <span class="text-overline" style="text-align: center;">Patient Stories</span>
+    <h2 class="section-title fade-up" style="text-align: center;">Real Recovery Stories</h2>
+    <div class="grid-3" style="margin-top: 48px;">
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Excellent treatment and very professional staff. My back pain of 3 years resolved in just 8 sessions."</p>
+        <div class="testimonial-author">Ramesh K. &bull; JP Nagar</div>
+      </div>
+      <div class="testimonial-card fade-up" style="transition-delay: 0.1s;">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Best physiotherapy clinic in JP Nagar. The doctor understood my problem immediately and the treatment was very effective."</p>
+        <div class="testimonial-author">Sunita M. &bull; Banashankari</div>
+      </div>
+      <div class="testimonial-card fade-up" style="transition-delay: 0.2s;">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Very clean clinic, qualified therapists, and genuine care. Highly recommend to anyone with knee or back pain."</p>
+        <div class="testimonial-author">Vikram R. &bull; Kanakapura Road</div>
       </div>
     </div>
   </section>
 
-  <!-- 5. About / Credentials -->
-  <section id="about" class="section-pad">
-    <div class="container grid-2">
-      <div class="image-block">
-        <img src="assets/optimized/dr-bijay-jha.jpg" alt="Dr. Bijay Mohan Jha" loading="lazy" decoding="async">
-        <div class="image-accent">
-          <h4>Specialist</h4>
-          <p>Orthopaedic & Neurological</p>
-        </div>
-      </div>
-      <div class="about-text">
-        <span class="text-overline">Lead Clinician</span>
-        <h2 class="section-title">Why Patients Trust Dr. Jha</h2>
-        <h4>Dr. Bijay Mohan Jha | B.Pt, D. Accu., D. Accupun., M.D. (Accu)</h4>
-        <p>At Aaditi Physio & Rehab, we believe that true healing goes beyond temporary pain relief. Dr. Bijay Mohan Jha brings over 15 years of rigorous clinical expertise to JP Nagar, establishing a practice rooted in precision diagnostics and compassionate, hands-on care.<br><br>Our methodology is distinguished by a commitment to identifying the biomechanical root cause. Integrating advanced manual therapy, clinical acupuncture, and natural therapeutic methods, we craft highly individualized rehabilitation pathways that cure paralysis and severe deformities with no side effects.</p>
-        
-        <ul class="qual-list">
-          <li>B.Pt &mdash; Bachelor of Physiotherapy</li>
-          <li>D. Accu. &mdash; Diploma in Acupuncture</li>
-          <li>D. Accupun. &mdash; Advanced Diploma in Acupressure</li>
-          <li>M.D. (Accu) &mdash; Doctor of Medicine in Acupuncture</li>
-          <li>Specialist of Orthopaedic & Neurological Cases</li>
-        </ul>
-      </div>
+  <!-- CTA Banner -->
+  <div class="container" style="position: relative; z-index: 10;">
+    <div class="cta-banner fade-up">
+      <h2>Start Your Recovery Today</h2>
+      <p>Don't let pain control your life.</p>
+      <a href="https://wa.me/919845233815" class="btn btn-whatsapp" target="_blank" style="font-size: 1.1rem; padding: 16px 32px;">Book on WhatsApp</a>
     </div>
-  </section>
+  </div>
 
-  <!-- 6. What to Expect (NEW) -->
-  <section id="expect" class="section-pad">
-    <div class="container">
-      <span class="text-overline" style="color: var(--accent);">Patient Journey</span>
-      <h2 class="section-title">What to Expect at Your First Visit</h2>
-      <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8);">We make sure you feel comfortable from the moment you walk in. No jargon. No guesswork.</p>
-      
-      <div class="timeline">
-        <div class="step">
-          <span class="step-num">01</span>
-          <h4>Assessment</h4>
-          <p>Dr. Jha reviews your medical history, tests your range of motion, and listens to your pain story.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">02</span>
-          <h4>Diagnosis</h4>
-          <p>You get a clear explanation of your condition in plain language &mdash; no scary medical terms.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">03</span>
-          <h4>Custom Plan</h4>
-          <p>A treatment plan is created specifically for your body, utilizing natural therapies and acupuncture.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">04</span>
-          <h4>Treatment</h4>
-          <p>Your first session begins the same day. Most patients feel a difference immediately.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. Why Choose Us -->
-  <section id="why" class="section-pad">
-    <div class="container">
-      <span class="text-overline">Our Approach</span>
-      <h2 class="section-title">The Aaditi Difference</h2>
-      
-      <div class="why-grid">
-        <div class="why-card">
-          <span class="why-icon"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span>
-          <div class="why-content">
-            <h4>Evidence-Based Treatment</h4>
-            <p>Every plan is rooted in the latest clinical research and holistic natural therapies.</p>
-          </div>
-        </div>
-        <div class="why-card">
-          <span class="why-icon"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg></span>
-          <div class="why-content">
-            <h4>1-on-1 Sessions Only</h4>
-            <p>No crowded gyms. You get complete attention every single session.</p>
-          </div>
-        </div>
-        <div class="why-card">
-          <span class="why-icon"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg></span>
-          <div class="why-content">
-            <h4>WhatsApp Support</h4>
-            <p>Message us between sessions. We're with you through your entire recovery journey.</p>
-          </div>
-        </div>
-        <div class="why-card">
-          <span class="why-icon"><svg class="icon" aria-hidden="true"><use href="#icon-home"></use></svg></span>
-          <div class="why-content">
-            <h4>Home Visits Available</h4>
-            <p>Can't travel? We come to you. Home physiotherapy across Bengaluru.</p>
-          </div>
-        </div>
-        <div class="why-card">
-          <span class="why-icon"><svg class="icon" aria-hidden="true"><use href="#icon-user"></use></svg></span>
-          <div class="why-content">
-            <h4>Female Therapist Available</h4>
-            <p>We offer female physiotherapist sessions on request &mdash; no need to ask twice.</p>
-          </div>
-        </div>
-        <div class="why-card">
-          <span class="why-icon"><svg class="icon" aria-hidden="true"><use href="#icon-video"></use></svg></span>
-          <div class="why-content">
-            <h4>Online Physiotherapy</h4>
-            <p>Can't make it in? Get a full exercise consultation and follow-up via video call.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. Patient Stories (UPGRADED) -->
-  <section id="stories" class="section-pad">
-    <div class="container">
-      <span class="text-overline">Case Studies</span>
-      <h2 class="section-title">Real Patients. Real Recovery.</h2>
-      <p style="font-size: 1.1rem; color: var(--text-muted);">Stories from patients who walked through our door and left their pain behind.</p>
-      
-      <div class="stories-grid">
-        <div class="story-card">
-          <div style="margin-bottom: 1rem;"><span class="story-tag">Severe Cervical Pain</span></div>
-          <p class="story-quote">"Dr. Jha is a lifesaver. His manual therapy and acupuncture combination provided relief I didn't think was possible."</p>
-          <div class="story-meta">
-            <div>
-              <p style="font-weight: 600;">Rajesh K., 45</p>
-              <span class="story-outcome"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Pain-free in 4 weeks</span>
-            </div>
-            <span class="story-sessions">12 sessions</span>
-          </div>
-        </div>
-        <div class="story-card">
-          <div style="margin-bottom: 1rem;"><span class="story-tag">Post Knee Surgery</span></div>
-          <p class="story-quote">"The level of clinical insight here is unmatched. Recovered from major knee surgery efficiently. An incredibly professional clinic environment."</p>
-          <div class="story-meta">
-            <div>
-              <p style="font-weight: 600;">Sneha M., 58</p>
-              <span class="story-outcome"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Full mobility restored</span>
-            </div>
-            <span class="story-sessions">20 sessions</span>
-          </div>
-        </div>
-        <div class="story-card">
-          <div style="margin-bottom: 1rem;"><span class="story-tag">Neurological Paralysis</span></div>
-          <p class="story-quote">"My father received neurological rehabilitation for paralysis here. The natural therapy approach Dr. Bijay uses is highly effective with zero side effects."</p>
-          <div class="story-meta">
-            <div>
-              <p style="font-weight: 600;">Vikram S., 72</p>
-              <span class="story-outcome"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Regained independence</span>
-            </div>
-            <span class="story-sessions">30+ sessions</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. Google Reviews (NEW) -->
-  <section id="reviews" class="section-pad" style="background: var(--bg-white);">
-    <div class="container">
-      <div class="reviews-header">
-        <div class="review-score">5.0</div>
-        <div class="review-meta">
-          <h4>Excellent</h4>
-          <p>Based on 182+ Google reviews</p>
-        </div>
-      </div>
-      
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="stars"><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg></div>
-          <p style="margin-bottom: 1.5rem; color: var(--text-muted);">"Took sessions for lower back and neck pain. My pain has reduced to almost zero. The clinic is well-equipped and professionally maintained."</p>
-          <p style="font-weight: 600; font-size: 0.9rem;">Aman Y.</p>
-        </div>
-        <div class="review-card">
-          <div class="stars"><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg></div>
-          <p style="margin-bottom: 1.5rem; color: var(--text-muted);">"Went here after my fracture. The therapist carefully assessed my condition and created a structured rehab plan. Significant improvement."</p>
-          <p style="font-weight: 600; font-size: 0.9rem;">Nithin N.</p>
-        </div>
-        <div class="review-card">
-          <div class="stars"><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg></div>
-          <p style="margin-bottom: 1.5rem; color: var(--text-muted);">"Friendly staff, very patient, and genuinely focused on your recovery. Highly recommend."</p>
-          <p style="font-weight: 600; font-size: 0.9rem;">Sneha R.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10. Contact -->
-  <section id="contact" class="section-pad">
-    <div class="container">
-      <div class="contact-wrapper">
-        <div class="contact-form-area">
-          <span class="text-overline">Patient Intake</span>
-          <h2 class="section-title" style="font-size: 2.5rem;">Ready to Move Without Pain?</h2>
-          <p style="color: var(--text-muted); margin-bottom: 2rem;">Book your assessment. No commitment. No guesswork.</p>
-          <p style="color: var(--primary); font-weight: 500; margin-bottom: 2rem;"><svg class="icon" aria-hidden="true"><use href="#icon-pin"></use></svg> Clinic hours: Mon-Sat, 9 AM - 9 PM</p>
-          
-          <form onsubmit="return false;">
-            <div class="form-group">
-              <label>Full Name</label>
-              <input type="text" id="enq-name" class="form-control" placeholder="Enter your name" required>
-            </div>
-            <div class="form-group">
-              <label>Contact Number</label>
-              <input type="tel" id="enq-phone" class="form-control" placeholder="+91" required>
-            </div>
-            <div class="form-group">
-              <label>Condition / Service Needed</label>
-              <select id="enq-service" class="form-control" required>
-                <option value="">Select an option</option>
-                <option value="Paralysis / Neurological">Paralysis / Neurological</option>
-                <option value="Spine & Neck Pain">Spine & Neck Pain</option>
-                <option value="Joint Pain">Joint Pain</option>
-                <option value="Post-Surgical Rehab">Post-Surgical Rehab</option>
-                <option value="Sports Injuries">Sports Injuries</option>
-                <option value="Geriatric Physiotherapy">Geriatric Physiotherapy</option>
-                <option value="Pediatric Physiotherapy">Pediatric Physiotherapy</option>
-                <option value="Postural Deformities">Postural Deformities</option>
-              </select>
-            </div>
-            <button type="button" onclick="submitBooking()" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Book via WhatsApp</button>
-          </form>
-        </div>
-        
-        <div class="contact-map-area">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.751694206085!2d77.5898!3d12.9080!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae154fb5912775%3A0xbaa9acfc437d4cdc!2sAaditi%20Physiotherapy%20And%20Rehabilitation%20Center!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 11. Footer -->
+  <!-- Shared Footer -->
   <footer>
     <div class="container">
-      <div class="footer-content">
-        <div>
-          <div class="logo" style="color: white; margin-bottom: 1rem;">Aaditi <span style="color: var(--accent);">Physiotherapy</span></div>
-          <p style="max-width: 400px; font-size: 1rem;">Healing through movement, backed by science.</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Aaditi Physio</h3>
+          <p style="margin-bottom: 24px; max-width: 300px; font-size: 1.05rem;">Healing with Precision. Caring with Heart.</p>
         </div>
-        <div style="display: flex; gap: 1rem;">
-          <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem;">Facebook</a>
-          <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem;">Instagram</a>
+        <div>
+          <h4 style="color: white; font-family: var(--font-body); margin-bottom: 20px;">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Clinic</a>
+            <a href="services.html">Services</a>
+            <a href="conditions.html">Conditions Treated</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <h4 style="color: white; font-family: var(--font-body); margin-bottom: 20px;">Contact Information</h4>
+          <p><svg class="icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> +91 98452 33815</p>
+          <p><svg class="icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> 325, 33rd Main Rd, KR Layout, JP Nagar Phase 6, Bengaluru - 560078</p>
+          <p><svg class="icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Mon-Sat: 8 AM - 8 PM<br>Sun: By Appointment</p>
         </div>
       </div>
-      <p style="text-align: center; font-size: 0.9rem;">&copy; 2026 Aaditi Physiotherapy. All Rights Reserved.</p>
+      <div style="text-align: center; font-size: 0.9rem; opacity: 0.7;">
+        &copy; 2026 Aaditi Physiotherapy And Rehabilitation Center. All rights reserved.
+      </div>
     </div>
   </footer>
 
-  <script>
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 50) { nav.classList.add('scrolled'); }
-      else { nav.classList.remove('scrolled'); }
-    });
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919845233815" class="floating-wa" target="_blank" aria-label="WhatsApp Us">
+    <svg viewBox="0 0 24 24"><path d="M12.01 2.01c-5.52 0-10 4.48-10 10 0 1.74.45 3.39 1.25 4.84L2 22l5.31-1.18c1.42.75 3.03 1.17 4.7 1.17 5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 16.89c-1.42 0-2.8-.36-4.04-1l-2.89.64.65-2.83A7.957 7.957 0 0 1 4.01 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.4-5.46c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.31-.74-1.8-.2-.48-.41-.42-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.09 3.62 2.4.92 2.4 1.54 2.84 1.48.44-.06 1.43-.58 1.63-1.14.2-.56.2-.104.14-.114-.06-.01-.22-.05-.46-.17z"/></svg>
+  </a>
 
-    const revealTargets = document.querySelectorAll(
-      'section .container > *, .condition-card, .service-track, .step, .why-card, .story-card, .review-card, .contact-wrapper'
-    );
+  <!-- Popup Form -->
+  <div class="popup-overlay" id="popup-overlay">
+    <div class="popup-content">
+      <button class="popup-close" id="popup-close">&times;</button>
+      <h2 style="font-family: var(--font-display); color: var(--primary); margin-bottom: 8px; font-size: 1.8rem;">Get a Free Consultation Call</h2>
+      <p style="color: var(--text-muted); margin-bottom: 24px;">Tell us your concern and we'll call you back within 2 hours.</p>
+      <input type="text" id="popup-name" class="form-control" placeholder="Your Name">
+      <input type="tel" id="popup-phone" class="form-control" placeholder="Phone Number">
+      <textarea id="popup-concern" class="form-control" placeholder="Tell us what you need help with" rows="3" style="resize: none;"></textarea>
+      <button onclick="submitToWhatsApp('popup')" class="btn btn-whatsapp" style="width: 100%; border-radius: 8px; padding: 14px;">Request Free Callback</button>
+    </div>
+  </div>
 
-    revealTargets.forEach((element, index) => {
-      element.classList.add('section-reveal');
-      element.style.setProperty('--reveal-index', index % 6);
-    });
-
-    if ('IntersectionObserver' in window) {
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-
-      revealTargets.forEach((element) => revealObserver.observe(element));
-    } else {
-      revealTargets.forEach((element) => element.classList.add('is-visible'));
-    }
-
-    function submitBooking() {
-      const name = document.getElementById('enq-name').value.trim();
-      const phone = document.getElementById('enq-phone').value.trim();
-      const service = document.getElementById('enq-service').value.trim();
-      if (!name || !phone || !service) {
-        alert('Please complete all fields before submitting.');
-        return;
-      }
-      const message = `Hi Dr. Bijay Mohan Jha, I'd like to book an assessment.\n\nName: ${name}\nContact: ${phone}\nCondition: ${service}`;
-      const encoded = encodeURIComponent(message);
-      window.open(`https://wa.me/919845233815?text=${encoded}`, '_blank');
-    }
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>

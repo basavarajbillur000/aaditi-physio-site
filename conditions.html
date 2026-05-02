@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions We Treat | Aaditi Physiotherapy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    .condition-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 60px; }
+    .condition-box { background: white; padding: 32px; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); transition: var(--transition); border-left: 4px solid var(--accent); }
+    .condition-box:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.06); border-left-color: var(--primary); }
+    .condition-box svg { color: var(--primary); width: 32px; height: 32px; margin-bottom: 16px; }
+    .condition-box h3 { font-size: 1.25rem; margin-bottom: 12px; }
+    .condition-box p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Navbar -->
+  <nav id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Aaditi Physio</a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="conditions.html" class="active">Conditions</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Book Now</a>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <svg class="icon"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="page-hero">
+    <div class="container fade-up">
+      <div class="breadcrumb">Home &rsaquo; Conditions We Treat</div>
+      <h1>Conditions We Treat</h1>
+      <p>From acute injuries to chronic pain &mdash; we've treated it all</p>
+    </div>
+  </header>
+
+  <!-- Conditions Grid -->
+  <section class="container" style="padding-top: 100px;">
+    <div class="condition-list">
+      <div class="condition-box fade-up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-8M6 20V10M18 20V4"/></svg>
+        <h3>Lower Back Pain</h3>
+        <p>Most common condition. Hands-on therapy + exercise correction.</p>
+      </div>
+      <div class="condition-box fade-up" style="transition-delay: 0.1s;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <h3>Neck & Shoulder Pain</h3>
+        <p>Poor posture, desk work, muscle tension &mdash; fully treatable.</p>
+      </div>
+      <div class="condition-box fade-up" style="transition-delay: 0.2s;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <h3>Knee Pain & Arthritis</h3>
+        <p>Joint pain management with proven manual therapy.</p>
+      </div>
+      <div class="condition-box fade-up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <h3>Sports Injuries</h3>
+        <p>ACL tears, tennis elbow, sprains, strains.</p>
+      </div>
+      <div class="condition-box fade-up" style="transition-delay: 0.1s;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <h3>Post-Surgical Recovery</h3>
+        <p>Knee replacement, hip replacement, spinal surgery.</p>
+      </div>
+      <div class="condition-box fade-up" style="transition-delay: 0.2s;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+        <h3>Stroke & Paralysis</h3>
+        <p>Neurological rehab to regain movement and independence.</p>
+      </div>
+      <div class="condition-box fade-up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        <h3>Frozen Shoulder</h3>
+        <p>Restoring full range of motion through targeted therapy.</p>
+      </div>
+      <div class="condition-box fade-up" style="transition-delay: 0.1s;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <h3>Sciatica</h3>
+        <p>Nerve pain management from root cause, not just symptoms.</p>
+      </div>
+      <div class="condition-box fade-up" style="transition-delay: 0.2s;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg>
+        <h3>Spondylitis</h3>
+        <p>Cervical and lumbar spondylitis &mdash; long-term pain relief.</p>
+      </div>
+      <div class="condition-box fade-up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <h3>Parkinson's Disease</h3>
+        <p>Balance, coordination and mobility improvement.</p>
+      </div>
+      <div class="condition-box fade-up" style="transition-delay: 0.1s;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <h3>Pediatric Conditions</h3>
+        <p>Cerebral palsy, developmental delays, motor difficulties.</p>
+      </div>
+      <div class="condition-box fade-up" style="transition-delay: 0.2s;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l3-9 5 18 3-9h5"/></svg>
+        <h3>Repetitive Stress Injuries</h3>
+        <p>IT professionals, desk workers, overuse injuries.</p>
+      </div>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, var(--bg-subtle), #e2e8f0); border-radius: var(--radius-md); padding: 48px; text-align: center; border: 1px solid #cbd5e1;" class="fade-up">
+      <h3 style="font-size: 1.8rem; margin-bottom: 16px;">Is Your Condition Listed?</h3>
+      <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px; max-width: 600px; margin-inline: auto;">Don't see your condition? We treat a wide range of musculoskeletal and neurological conditions. Ask us directly.</p>
+      <a href="https://wa.me/919845233815" class="btn btn-whatsapp" target="_blank" style="font-size: 1.1rem; padding: 12px 28px;">Ask on WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Aaditi Physio</h3>
+          <p style="margin-bottom: 24px; max-width: 300px; font-size: 1.05rem;">Healing with Precision. Caring with Heart.</p>
+        </div>
+        <div>
+          <h4 style="color: white; font-family: var(--font-body); margin-bottom: 20px;">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Clinic</a>
+            <a href="services.html">Services</a>
+            <a href="conditions.html">Conditions Treated</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <h4 style="color: white; font-family: var(--font-body); margin-bottom: 20px;">Contact Information</h4>
+          <p><svg class="icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> +91 98452 33815</p>
+          <p><svg class="icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> 325, 33rd Main Rd, KR Layout, JP Nagar Phase 6, Bengaluru - 560078</p>
+          <p><svg class="icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Mon-Sat: 8 AM - 8 PM<br>Sun: By Appointment</p>
+        </div>
+      </div>
+      <div style="text-align: center; font-size: 0.9rem; opacity: 0.7;">
+        &copy; 2026 Aaditi Physiotherapy And Rehabilitation Center. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919845233815" class="floating-wa" target="_blank" aria-label="WhatsApp Us">
+    <svg viewBox="0 0 24 24"><path d="M12.01 2.01c-5.52 0-10 4.48-10 10 0 1.74.45 3.39 1.25 4.84L2 22l5.31-1.18c1.42.75 3.03 1.17 4.7 1.17 5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 16.89c-1.42 0-2.8-.36-4.04-1l-2.89.64.65-2.83A7.957 7.957 0 0 1 4.01 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.4-5.46c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.31-.74-1.8-.2-.48-.41-.42-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.09 3.62 2.4.92 2.4 1.54 2.84 1.48.44-.06 1.43-.58 1.63-1.14.2-.56.2-.104.14-.114-.06-.01-.22-.05-.46-.17z"/></svg>
+  </a>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
